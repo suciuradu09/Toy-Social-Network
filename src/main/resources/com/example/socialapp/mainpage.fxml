@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="669.0" prefWidth="1209.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialapp.controller.UserController">
+   <top>
+      <HBox prefHeight="49.0" prefWidth="859.0" style="-fx-background-color: #049CB9;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="49.0" prefWidth="1098.0" text="upLink" textFill="WHITE">
+               <font>
+                  <Font name="Candara" size="26.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="75.0" />
+               </HBox.margin>
+            </Label>
+         </children></HBox>
+   </top>
+   <left>
+      <VBox prefHeight="620.0" prefWidth="237.0" style="-fx-background-color: #049CB9;" stylesheets="@css/styling.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#viewProfile" prefHeight="45.0" prefWidth="249.0" stylesheets="@css/styling.css" text="Profile" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" opacity="0.64">
+                     <image>
+                        <Image url="@images/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#initializeTableUsers" prefHeight="45.0" prefWidth="261.0" stylesheets="@css/styling.css" text="Users" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" opacity="0.76">
+                     <image>
+                        <Image url="@images/users.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#initializeChatPane" prefHeight="45.0" prefWidth="260.0" stylesheets="@css/styling.css" text="Chats" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" opacity="0.76">
+                     <image>
+                        <Image url="@images/chat.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" onAction="#initializeTableFriends" prefHeight="45.0" prefWidth="299.0" stylesheets="@css/styling.css" text="Friends" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" opacity="0.89">
+                     <image>
+                        <Image url="@images/high-five.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font></Button>
+            <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="47.0" mnemonicParsing="false" onAction="#initializeRequests" prefHeight="45.0" prefWidth="234.0" stylesheets="@css/styling.css" text="Requests" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" opacity="0.83">
+                     <image>
+                        <Image url="@images/quote-request.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font></Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logoutButton" prefHeight="44.0" prefWidth="237.0" stylesheets="@css/styling.css" text="Logout" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets left="1.0" top="340.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <StackPane BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="profilePane" prefHeight="563.0" prefWidth="972.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <GridPane alignment="CENTER" layoutX="333.0" layoutY="380.0" prefHeight="154.0" prefWidth="307.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="153.0" text="Firstname :" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Calibri" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="26.0" prefHeight="31.0" prefWidth="150.0" text="Lastname :" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Calibri" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="59.0" prefHeight="31.0" prefWidth="149.0" text="Username :">
+                                 <font>
+                                    <Font name="Calibri" size="26.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="usernameProfile" prefHeight="23.0" prefWidth="149.0" text="username" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Arial Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="firstnameProfile" prefHeight="23.0" prefWidth="148.0" text="firstname" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Arial Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lastnameProfile" prefHeight="23.0" prefWidth="149.0" text="lastname" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <ImageView fitHeight="178.0" fitWidth="972.0">
+                           <image>
+                              <Image url="@images/photo.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="199.0" layoutX="387.0" layoutY="94.0">
+                           <image>
+                              <Image url="@images/profileuser.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="366.0" layoutY="312.0" text="Welcome back!">
+                           <font>
+                              <Font name="Consolas" size="32.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tableView" blendMode="SRC_ATOP" prefHeight="624.0" prefWidth="964.0" stylesheets="@css/styling.css">
+                    <columns>
+                      <TableColumn fx:id="usernameColumn" prefWidth="301.0" text="Username" />
+                      <TableColumn fx:id="firstNameColumn" prefWidth="373.0" text="Firstname" />
+                        <TableColumn fx:id="lastNameColumn" prefWidth="296.0" text="Lastname" />
+                    </columns>
+                  </TableView>
+                  <Pane fx:id="paneRequestsTable" blendMode="SRC_ATOP" prefHeight="0.0" prefWidth="972.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <Button layoutX="5.0" layoutY="6.0" mnemonicParsing="false" onAction="#acceptButtonClicked" prefHeight="38.0" prefWidth="214.0" stylesheets="@css/styling.css" text="Accept friend" />
+                        <Button layoutX="231.0" layoutY="6.0" mnemonicParsing="false" onAction="#removeButtonClicked" prefHeight="38.0" prefWidth="214.0" stylesheets="@css/styling.css" text="Remove" />
+                        <TableView fx:id="tablePending" blendMode="SRC_ATOP" layoutY="49.0" prefHeight="394.0" prefWidth="971.0" stylesheets="@css/styling.css">
+                          <columns>
+                            <TableColumn fx:id="friendFirstnamePending" prefWidth="266.0" text="Firstname" />
+                            <TableColumn fx:id="friendLastnamePending" prefWidth="388.0" text="Lastname" />
+                              <TableColumn fx:id="friendsFromPending" prefWidth="317.0" text="Date" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="cancelRequestButton" layoutX="731.0" layoutY="6.0" mnemonicParsing="false" onAction="#cancelRequestButtonClicked" prefHeight="38.0" prefWidth="232.0" stylesheets="@css/styling.css" text="Cancel Request" />
+                        <TableView fx:id="requestsSent" layoutY="440.0" prefHeight="184.0" prefWidth="972.0" stylesheets="@css/styling.css">
+                          <columns>
+                            <TableColumn fx:id="requestsSentColumn" prefWidth="971.0" text="Requests sent" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneFriendsTable" prefHeight="624.0" prefWidth="972.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <TableView fx:id="friendsTable" blendMode="SRC_ATOP" layoutY="46.0" prefHeight="576.0" prefWidth="972.0" stylesheets="@css/styling.css">
+                          <columns>
+                            <TableColumn fx:id="friendFirstname" prefWidth="339.0" text="firstname" />
+                              <TableColumn fx:id="friendLastname" prefWidth="332.0" text="lastname" />
+                            <TableColumn fx:id="friendsFrom" prefWidth="299.0" text="Friends from" />
+                          </columns>
+                        </TableView>
+                        <ButtonBar prefHeight="46.0" prefWidth="970.0">
+                          <buttons>
+                              <TextField fx:id="searchBar" onAction="#setSearchBar" prefHeight="25.0" prefWidth="397.0" promptText="search users">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </TextField>
+                              <Button minWidth="54.0" mnemonicParsing="false" onAction="#addFriend" prefHeight="23.0" stylesheets="@css/styling.css" text="Add" />
+                            <Button fx:id="deleteFriendButton" minWidth="24.0" mnemonicParsing="false" onAction="#deleteFriend" prefHeight="30.0" prefWidth="111.0" stylesheets="@css/styling.css" text="Delete">
+                                 <padding>
+                                    <Insets bottom="2.0" />
+                                 </padding>
+                              </Button>
+                          </buttons>
+                        </ButtonBar>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="chatPane" blendMode="SRC_ATOP" prefHeight="500.0" prefWidth="972.0" style="-fx-background-color: #FFFFFF;">
+                     <children>
+                        <TableView fx:id="recentMessagesTable" layoutX="1.0" layoutY="1.0" onMouseClicked="#initializeChatMessages" prefHeight="621.0" prefWidth="265.0" stylesheets="@css/styling_chat.css">
+                          <columns>
+                            <TableColumn fx:id="recentMessages" prefWidth="264.0" text="Recent messages" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="labelSelectChatFriend" layoutX="400.0" layoutY="280.0" text="Start a new conversation!" textAlignment="CENTER">
+                           <font>
+                              <Font name="Consolas" size="31.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane fx:id="anchorPaneChat" layoutX="263.0" layoutY="1.0" prefHeight="623.0" prefWidth="709.0" style="-fx-background-color: ECECEC;">
+                           <children>
+                              <ListView fx:id="messagesListView" layoutX="1.0" prefHeight="561.0" prefWidth="708.0" stylesheets="@css/styling_chat.css" />
+                              <TextField fx:id="textChatInput" layoutX="17.0" layoutY="576.0" onKeyTyped="#onTextWritten" prefHeight="34.0" prefWidth="550.0" promptText="Type a message" stylesheets="@css/styling_chat.css">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="buttonSend" layoutX="575.0" layoutY="575.0" mnemonicParsing="false" onAction="#buttonSendClicked" prefHeight="36.0" prefWidth="120.0" stylesheets="@css/styling_chat.css" text="Send" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </top>
+      </BorderPane>
+   </center>
+</BorderPane>

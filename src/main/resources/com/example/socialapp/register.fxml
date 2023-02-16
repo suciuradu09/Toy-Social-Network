@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="717.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.socialapp.controller.RegisterController">
+   <center>
+      <AnchorPane prefHeight="550.0" prefWidth="717.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="278.0" layoutY="68.0" text="Sign up now">
+               <font>
+                  <Font name="Calibri Bold" size="32.0" />
+               </font>
+            </Label>
+            <TextField fx:id="firstnameRegister" layoutX="225.0" layoutY="139.0" prefHeight="35.0" prefWidth="270.0" promptText="Firstname">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="passwordRegister2" layoutX="224.0" layoutY="317.0" prefHeight="35.0" prefWidth="270.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="passwordRegister" layoutX="224.0" layoutY="317.0" prefHeight="35.0" prefWidth="270.0" promptText="Password">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="lastnameRegister" layoutX="224.0" layoutY="198.0" prefHeight="35.0" prefWidth="270.0" promptText="Lastname">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="usernameRegister" layoutX="225.0" layoutY="258.0" prefHeight="35.0" prefWidth="270.0" promptText="Username">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="register2" layoutX="223.0" layoutY="409.0" mnemonicParsing="false" onAction="#registerButton" prefHeight="38.0" prefWidth="272.0" style="-fx-background-color: #21C37F;" text="CREATE ACCOUNT" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font>
+            </Button>
+            <CheckBox fx:id="checkBoxRegister" layoutX="240.0" layoutY="367.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="237.0" text="I read and agree Terms &amp; Conditions">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></CheckBox>
+            <Label fx:id="registerLabel" contentDisplay="CENTER" layoutX="246.0" layoutY="491.0" prefHeight="17.0" prefWidth="229.0" textFill="RED" />
+            <Label layoutX="266.0" layoutY="459.0" text="Already have an account?" />
+            <Label fx:id="registerLabel2" layoutX="408.0" layoutY="459.0" onMouseClicked="#userLogin" text="Log in" textFill="#296ada">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <CheckBox fx:id="seePasswordCheck" layoutX="480.0" layoutY="300.0" mnemonicParsing="false" onAction="#seePassword" prefHeight="17.0" prefWidth="14.0">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="415.0" layoutY="302.0" text="Show password">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
